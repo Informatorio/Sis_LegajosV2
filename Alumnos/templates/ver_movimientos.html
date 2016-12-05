@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Movimientos{% endblock %}
+
+{% block content %}
+{% for movimiento in movimientos %}
+	<h2><a href="#">{{ movimiento.fecha }}</a></h2>
+	<!--<h2><a href="/movimientos/{{ movimiento.id }}">{{ cuenta.nombre }}</a></h2>-->
+	<p>{{ movimiento.alumno }} {{ movimiento.desde }} <b>{{ movimiento.hasta }}</b></p>
+{% endfor %}
+<!--<p>El total de las cuentas es {{ total }}.</p>-->
+{% endblock %}

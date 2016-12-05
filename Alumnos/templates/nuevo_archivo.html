@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} Nuevo Alumno {% endblock %}
+
+{% block content %}
+<div class="container" id="FormularioNuevoAlumno">
+	<form action="/nuevo_archivo/" method="POST">
+		
+		{% csrf_token %}
+		{{ form_nuevo_archivo }}
+
+		<input type="submit" value="GUARDAR DATOS"/>
+
+	</form>
+
+</div>
+{% endblock %}

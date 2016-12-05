@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %} Nuevo Alumno {% endblock %}
+
+{% block content %}
+
+<div class="col-md-4 col-md-offset-4">
+	<div class="panel panel-danger sombra">
+		<div class="panel-heading">
+			<h3 class="panel-title">Ingrese los datos del nuevo alumno</h3>
+		</div>
+		<div class="panel-body">
+			<form action="/nuevo_alumno/" method="POST">
+				{% csrf_token %}
+				<div class="form-group">
+					<span class="input-group-addon" id="basic-addon1">LEGAJO</span>
+					<input id="id_legajo" maxlength="9" name="legajo" required="" type="text" class="form-control" placeholder="XXXX-XXXX" aria-describedby="basic-addon1">
+				</div>
+				<div class="form-group">
+					<span class="input-group-addon" id="basic-addon1">DNI</span>
+					<input id="id_dni" name="dni" maxlength="8" required="" type="text" class="form-control" placeholder="12345678" aria-describedby="basic-addon1">
+				</div>
+				<div class="form-group">
+					<span class="input-group-addon" id="basic-addon1">NOMBRE</span>
+					<input id="id_nombre" maxlength="70" name="nombre" required="" type="text" class="form-control" placeholder="Gregorias" aria-describedby="basic-addon1">
+				</div>
+				<div class="form-group">
+					<span class="input-group-addon" id="basic-addon1">APELLIDO</span>
+					<input id="id_apellido" maxlength="70" name="apellido" required="" type="text" class="form-control" placeholder="Matorras" aria-describedby="basic-addon1">
+				</div>
+				<div class="form-group">
+					<span class="input-group-addon" id="basic-addon1">FECHA DE NACIMIENTO</span>
+					<input id="id_fecha_nacimiento" name="fecha_nacimiento" required="" type="text" placeholder="XX-XX-XXXX" class="form-control" aria-describedby="basic-addon1">
+				</div>
+				<div class="form-group">
+					<input type="submit" value="GUARDAR DATOS" class="btn btn-danger"></input>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--
+<form action="/nuevo_alumno/" method="POST">
+
+	{% csrf_token %}
+	{{ form.as_p }}
+
+<input type="submit" value="GUARDAR DATOS"/>
+
+</form>
+-->
+
+{% endblock %}
