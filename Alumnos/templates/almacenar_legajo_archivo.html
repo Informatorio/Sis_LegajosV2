@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="panel panel-danger sombra" class="col-lg-12">
+	<div class="panel-heading">
+		<h2 class="panel-title"><span class="glyphicon glyphicon-transfer"></span>Moviendo Legajo...</h2>
+		</div>
+		<div class="panel-body">
+			<!-- Info del alumno -->
+		<div class="panel panel-danger" class="col-lg-12">
+		  <div class="panel-heading">
+		    <h2 class="panel-title"><span class="glyphicon glyphicon-education"></span>Información del Alumno</h2>
+		  </div>
+		  <div class="panel-body">
+		  	<ul class="list-group">
+		  		<div class="col-lg-3">
+					<li class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Legajo: {{alumno.legajo}}</li>
+				</div>
+				<div class="col-lg-3">
+					<li class="list-group-item"><span class="glyphicon glyphicon-book"></span> D.N.I: {{alumno.dni}}</li>
+				</div>
+				<div class="col-lg-3">
+					<li class="list-group-item"><span class="glyphicon glyphicon-text-background"></span> Apellido: {{alumno.apellido}}</li>
+				</div>
+				<div class="col-lg-3">
+					<li class="list-group-item"><span class="glyphicon glyphicon-text-color"></span> Nombre: {{alumno.nombre}}</li>
+				</div>
+		  	</ul>
+		  </div>
+		</div>
+
+		<!-- Origen -->
+		<!--
+		<div class="panel panel-danger" class="col-lg-12">
+		  <div class="panel-heading">
+		    <h3 class="panel-title"><span class="glyphicon glyphicon-inbox"></span>Origen</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="row">
+			  	<ul class="list-group">
+			  		<div class="col-lg-4">
+					<li class="list-group-item"><span class="glyphicon glyphicon-picture"></span> Lugar: {{lugar_o}}</li>
+					</div>
+					<div class="col-lg-4">
+					<li class="list-group-item"><span class="glyphicon glyphicon-folder-close"></span> Archivo: {{archivo_o}}</li>
+					</div>
+					<div class="col-lg-4">
+					<li class="list-group-item"><span class="glyphicon glyphicon-object-align-left"></span> Cajón: {{cajon_o}}</li>
+			  		</div>
+			  	</ul>
+		    </div>
+		  </div>  
+		</div> -->
+
+		<!-- Destino -->
+		<div class="panel panel-danger" class="col-lg-12">
+		  <div class="panel-heading">
+		    <h3 class="panel-title"><span class="glyphicon glyphicon-inbox"></span>Destino</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="row">
+			  	<ul class="list-group">
+			  		<div class="col-lg-4">
+						<li class="list-group-item"><span class="glyphicon glyphicon-picture"></span> Lugar: {{lugar_d}}</li>
+					</div>
+			  	</ul>
+		    </div>
+		  </div>  
+		</div>
+
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+		    	<h3 class="panel-title"><span class="glyphicon glyphicon-inbox"></span>Seleccione una ubicación para el archivo y presione siguiente</h3>
+		  	</div>
+			<div class="panel-body">
+				<!--<form action="/mover_legajo/{{ object.id }}/" method="POST">-->
+				<form action="/almacenar_legajo_archivo/{{ alumno.id }}/" method="POST">
+					{% csrf_token %}
+					<div class="col-lg-4 col-lg-offset-4">
+						<div id="id_archivo">
+							{{ form_archivo }}
+							<input type="submit" class="btn btn-danger" value="Siguiente"/>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>		
+	</div>
+</div>
+
+
+		
+{% endblock %}
