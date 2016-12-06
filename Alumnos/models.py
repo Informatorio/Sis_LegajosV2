@@ -17,14 +17,14 @@ class Archivo(models.Model):
 	cajones = models.IntegerField()
 
 	def __str__(self):
-		return "{0}_{1}".format(self.lugar, self.numero)
+		return "{0}".format(self.numero)
 
 class Cajon(models.Model):
 	archivo = models.ForeignKey(Archivo,null=True)
 	numero = models.IntegerField()
 	
 	def __str__(self):
-		return "{0}_{1}".format(self.archivo,self.numero)
+		return "{0}".format(self.numero)
 
 
 class Alumno(models.Model):

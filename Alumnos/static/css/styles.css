@@ -101,6 +101,14 @@ body{
   text-align: center;
 }
 
+.col-lg-12{
+  text-align: center;
+}
+
+.col-lg-6{
+  text-align: center;
+}
+
 #id_archivo label{
   display: none;
 }
@@ -191,7 +199,7 @@ body{
 }
 
 .LETRAGRANDE li{
-  font-size: 1em;
+  font-size: 0.7em;
   list-style: none;
 }
 
