@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div style="text-align:center;">
 <form action="/nuevo_lugar/" method="POST" style="text-align:center;">
 	<!-- Etiqueta que sirve para identificar el formulario y mitigar ataques-->
 	{% csrf_token %}
@@ -11,4 +11,22 @@
 
 </form>
 
+<div class="container" style="margin-top: 10px;">
+	<div class="panel panel-danger sombra">
+	  <div class="panel-heading">
+	  	<h2>Lugares</h2>
+	  </div>
+	<table class="table tabla-resultado">
+		<tr class="danger">
+		</tr>
+		{% for lugar in lugares %}
+		<tr>
+			<th><p>{{ lugar.descripcion }}</p></th>
+		<!--	<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Editar</a></th>
+			<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Borrar</a></th>-->
+		</tr>
+		{% endfor %}
+	</table>
+	</div>
+</div>
 {% endblock %}

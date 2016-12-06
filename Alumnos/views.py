@@ -94,57 +94,25 @@ def alumno(request, id):
 
 def nuevo_alumno(request):
 	if request.method == 'POST':
-		form = Nuevo_alumno(request.POST)
-		if form.is_valid():
-			alumno = form.save(commit=False)
+		form_nuevo_alumno = Nuevo_alumno(request.POST)
+		if form_nuevo_alumno.is_valid():
+			alumno = form_nuevo_alumno.save(commit=False)
 			alumno.save()
 			return render(request, 'base.html',{'alumno': alumno})
 		else:
-			return render(request, 'nuevo_alumno.html',{'form': form})
+			return render(request, 'nuevo_alumno.html',{'form': form_nuevo_alumno})
 	else:
-		form = Nuevo_alumno()
-		return render(request, 'nuevo_alumno.html',{'form': form})
-
-#def lugares(request):
-#	return render(request, 'lugares.html', {'lugares': Lugar.objects.all()})
-
-#def nuevo_lugar(request):
-#	if request.method == 'POST':
-#		form_nuevo_lugar = Nuevo_lugar(request.POST)#crear el form
-#		if form_nuevo_lugar.is_valid():
-#			lugar = form_nuevo_lugar.save(commit=False)
-#			lugar.save()
-#			return render(request, 'lugares.html',{'lugares': Lugar.objects.all()}) #crear este template
-#		else:
-#			return render(request, 'nuevo_lugar.html',{'form_nuevo_lugar':form_nuevo_lugar}) #crear template
-#	else:
-#		form_nuevo_lugar = Nuevo_lugar()
-#		return render(request, 'nuevo_lugar.html',{'form_nuevo_lugar':form_nuevo_lugar}) 
+		form_nuevo_alumno = Nuevo_alumno()
+		return render(request, 'nuevo_alumno.html',{'form': form_nuevo_alumno})
 
 
-
-
-
-
-# def almacenar(request):
-# 	if request.method == 'POST':
-# 		form = AlmacenarForm(request.POST)
-# 		if form.is_valid():
-# 			localizacion = form.save(commit=False)
-# 			localizacion.save()
-# 			return render(request, 'alumno.html',{'alumno':localizacion.alumno})
-# 	else:
-# 		form = AlmacenarForm()
-# 		return render(request, 'almacenar.html',{'form':form})
 def nuevo_lugar(request):
 	if request.method == 'POST':
 		form_nuevo_lugar = Nuevo_lugar(request.POST)
 		if form_nuevo_lugar.is_valid():
 			lugar = form_nuevo_lugar.save(commit=False)
 			lugar.save()
-			return render(request, 'base.html',{
-				'lugar': lugar
-				})
+			return render(request, 'nuevo_lugar.html',{ 'lugar': lugar, 'lugares': Lugar.objects.all()})
 		else:
 			return render(request, 'nuevo_lugar.html',{
 				'form_nuevo_lugar': form_nuevo_lugar
@@ -153,8 +121,7 @@ def nuevo_lugar(request):
 		form_nuevo_lugar = Nuevo_lugar()
 		return render(
 			request, 'nuevo_lugar.html',{
-			'form_nuevo_lugar': form_nuevo_lugar
-			})
+			'form_nuevo_lugar': form_nuevo_lugar, 'lugares': Lugar.objects.all()})
 
 
 def nuevo_archivo(request):
