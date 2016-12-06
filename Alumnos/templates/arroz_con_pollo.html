@@ -7,25 +7,44 @@
 		<div class="panel-heading">	
 			<h4>Alumno: {{alumno.apellido}}, {{alumno.nombre}}</h4>
 		</div>
-		<div class="panel-body col-lg-8 col-lg-offset-2">
-			<div class="col-lg-5">	
-				<h4>Lugar de origen: {{lugar_o}}</h4>
-				<h4>Archivo de origen: {{archivo_o}}</h4>
-				<h4>Cajon de origen: {{cajon_o}}</h4>
+
+		<div class="panel-body">
+			<div class="row col-lg-8 col-lg-offset-2">
+				<div class="col-lg-5">	
+					<h4>Lugar de origen: {{lugar_o}}</h4>
+					<h4>Archivo de origen: {{archivo_o}}</h4>
+					<h4>Cajon de origen: {{cajon_o}}</h4>
+				</div>
+				<div class="col-lg-2">
+					<i class="glyphicon glyphicon-arrow-right FLECHAGRANDE" aria-hidden="true"></i>
+				</div>
+				<div class="col-lg-5">
+					<h4>Lugar de destino: {{lugar_d}}</h4>
+					<h4>Archivo de destino: {{archivo_d}}</h4>
+					<h4>Cajon de destino: {{cajon_d}}</h4>
+				</div>
 			</div>
-			<div class="col-lg-2">
-				<i class="glyphicon glyphicon-arrow-right LETRAGRANDE" aria-hidden="true"></i>
-			</div>
-			<div class="col-lg-5">
-				<h4>Lugar de destino: {{lugar_d}}</h4>
-				<h4>Archivo de destino: {{archivo_d}}</h4>
-				<h4>Cajon de destino: {{cajon_d}}</h4>
+
+			<div class="row">
+				<div class="text-center LETRAGRANDE">
+					
+					<div class="col-lg-3">						
+					</div>
+
+					<div class="col-lg-3">
+						<a class="btn btn-danger btn-lg" href="../../mover_legajo_lugar/{{ alumno.id }}/"><i class="glyphicon glyphicon-remove-sign" aria-hidden="true"></i><br><b>CORREGIR DESTINO</b></a>
+					</div>
+
+					<div class="col-lg-3">
+						<a class="btn btn-success btn-lg" href="confirmar_mover/{{ alumno.id }}/"><i class="glyphicon glyphicon-ok-sign" aria-hidden="true"></i><br><b>CONFIRMAR MOVIMIENTO</b></a>
+					</div>
+
+					<div class="col-lg-3">						
+					</div>
+
+				</div>
 			</div>
 		</div>
-		<div class="text-center LETRAGRANDE">
-			<a class="btn btn-danger btn-lg "href="http://127.0.0.1:8000/mover_legajo_lugar/{{ alumno.id }}/"><i class="glyphicon glyphicon-remove-sign" aria-hidden="true"></i><br><b>CORREGIR DESTINO</b></a>
-
-			<a class="btn btn-success btn-lg" href="confirmar_mover/{{ alumno.id }}/"><i class="glyphicon glyphicon-ok-sign" aria-hidden="true"></i><br><b>CONFIRMAR MOVIMIENTO</b></a>
 		</div>
 	</div>
 </div>
