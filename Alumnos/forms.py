@@ -72,7 +72,35 @@ class Mover_legajo_cajon(forms.Form):
 	 	else:
 	 		super(Mover_legajo_cajon,self).__init__(*args, **kwargs)
 
+#Almacenar un alumno en un nuevo lugar
+class Almacenar_legajo_lugar(forms.Form):
+	lugar = forms.ChoiceField(choices= Lugar.objects.values_list)
 
+class Almacenar_legajo_archivo(forms.Form):	
+ 	archivo = forms.ModelChoiceField(queryset=Archivo.objects.all(), label="Archivo")	
+ 	def __init__(self,*args,**kwargs):
+ 		if 'lugar' in kwargs:
+	 		self.lugar = kwargs.pop('lugar')
+	 		super(Almacenar_legajo_archivo,self).__init__(*args, **kwargs)
+	 		self.fields['archivo'].queryset = Archivo.objects.filter(lugar=self.lugar)
+	 	else:
+	 		super(Almacenar_legajo_archivo,self).__init__(*args, **kwargs)
+
+
+class Almacenar_legajo_cajon(forms.Form):
+	#cajon = forms.IntegerField(label='Cajón')	
+ 	cajon = forms.ModelChoiceField(queryset=Cajon.objects.all(), label="Cajon")	
+ 	def __init__(self,*args,**kwargs):
+ 		if 'archivo' in kwargs:
+ 			self.archivo = kwargs.pop('archivo')
+	 		super(Almacenar_legajo_cajon,self).__init__(*args, **kwargs)
+	 		self.fields['cajon'].queryset = Cajon.objects.filter(archivo=self.archivo)
+	 	else:
+	 		super(Almacenar_legajo_cajon,self).__init__(*args, **kwargs)
+
+
+
+	 		
 # class Mover_legajo_archivo(forms):
 # 	def __init__(self,*args,**kwargs):
 # 		self.op_archivos = kwargs.pop('op_archivos')

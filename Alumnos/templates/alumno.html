@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block title %} Resultado {% endblock %}
 {% block content %}
 <div class="col-lg-6">
 	<div class="well panel panel-danger sombra">
@@ -31,22 +31,27 @@
 	  <div class="panel-heading">
 	    <h3 class="panel-title"><span class="glyphicon glyphicon-inbox"></span>Ubicación de su Legajo</h3>
 	  </div>
+	  {% if cajon != 0 %}
+		  <div class="panel-body">
+		  	<div class="row">
+			  	<ul class="list-group LETRAGRANDE">
+			  		<div class="col-lg-12">
+					<li class="list-group-item"><div class="MiniLabel"><span class="glyphicon glyphicon-map-marker"></span> Lugar: </div> {{lugar}}</li>
+					</div>
+					<div class="col-lg-12">
+					<li class="list-group-item"><div class="MiniLabel"><span class="glyphicon glyphicon-align-justify"></span> Archivo: </div> {{archivo}}</li>
+					</div>
+					<div class="col-lg-12">
+					<li class="list-group-item"><div class="MiniLabel"><span class="glyphicon glyphicon-object-align-left"></span> Cajón: </div> {{cajon}}</li>
+			  		</div>
+			  	</ul>
+		    </div>
+		  </div>
+	  {% else %}
 
-	  <div class="panel-body">
-	  	<div class="row">
-		  	<ul class="list-group LETRAGRANDE">
-		  		<div class="col-lg-12">
-				<li class="list-group-item"><div class="MiniLabel"><span class="glyphicon glyphicon-map-marker"></span> Lugar: </div> {{lugar}}</li>
-				</div>
-				<div class="col-lg-12">
-				<li class="list-group-item"><div class="MiniLabel"><span class="glyphicon glyphicon-align-justify"></span> Archivo: </div> {{archivo}}</li>
-				</div>
-				<div class="col-lg-12">
-				<li class="list-group-item"><div class="MiniLabel"><span class="glyphicon glyphicon-object-align-left"></span> Cajón: </div> {{cajon}}</li>
-		  		</div>
-		  	</ul>
-	    </div>
-	  </div>
+	  	<p>El Alumno no esta almacenado</p>
+	  	
+	  {% endif %}
 	</div>    
 </div>
 
@@ -54,9 +59,16 @@
 	<div class="col-lg-6">
 		<a class="btn btn-danger btn-lg LETRAGRANDE" href="/home"><span class="glyphicon glyphicon-home"></span>Volver al Inicio</a>
 	</div>
+	{% if cajon != 0 %}
 	<div class="col-lg-6">	
 		<a class="btn btn-danger btn-lg LETRAGRANDE" href="/mover_legajo_lugar/{{ alumno.id }}"><span class="glyphicon glyphicon-retweet"></span>Mover Legajo</a>
 	</div>
+	{% else %}
+	<div class="col-lg-6">	
+		<a class="btn btn-danger btn-lg LETRAGRANDE" href="/almacenar_legajo_lugar/{{alumno.id}}"><span class="glyphicon glyphicon-retweet"></span>Almacenar Legajo</a>
+	</div>
+
+	{% endif %}
 </div>
 
 {% endblock %}

@@ -45,6 +45,11 @@ urlpatterns = [
     url(r'^mover_legajo_cajon/([0-9]+)/$', views.mover_legajo_cajon),
     url(r'^confirmar_mover/([0-9]+)/([0-9]+)/([0-9]+)/$', views.confirmar_mover, name="confirmar_mover"),
     url(r'^nuevo_lugar/$', views.nuevo_lugar),
+    #URLS par almacenar un legajo
+    url(r'^almacenar_legajo_lugar/([0-9]+)/$', views.almacenar_legajo_lugar,name="almacenar_legajo_lugar"),
+    url(r'^almacenar_legajo_archivo/([0-9]+)/$', views.almacenar_legajo_archivo),
+    url(r'^almacenar_legajo_cajon/([0-9]+)/$', views.almacenar_legajo_cajon),
+    url(r'^confirmar_almacenar/([0-9]+)/([0-9]+)/$', views.confirmar_almacenar, name="confirmar_almacenar"),
     #url(r'^ver_movimientos/$', views.ver_movimientos),
     #usuarios
     # url(r'^usuarios/$', ListaUsuarios.as_view(), name='lista'),
