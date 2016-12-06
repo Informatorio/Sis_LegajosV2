@@ -134,8 +134,8 @@ def nuevo_archivo(request):
 		if form_nuevo_archivo.is_valid():
 			archivo = form_nuevo_archivo.save(commit=False)
 			archivo.save()
-			return render(request, 'base.html',{
-				'archivo': archivo
+			return render(request, 'nuevo_archivo.html',{
+				'archivo': archivo, 'archivos': Archivo.objects.all()
 				})
 		else:
 			return render(request, 'nuevo_archivo.html',{
@@ -145,7 +145,7 @@ def nuevo_archivo(request):
 		form_nuevo_archivo = Nuevo_archivo()
 		return render(
 			request, 'nuevo_archivo.html',{
-			'form_nuevo_archivo': form_nuevo_archivo
+			'form_nuevo_archivo': form_nuevo_archivo, 'archivos': Archivo.objects.all()
 			})
 
 

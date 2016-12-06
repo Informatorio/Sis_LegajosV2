@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} Nuevo Alumno {% endblock %}
+{% block title %} Nuevo Archivo {% endblock %}
 
 {% block content %}
 <div class="container" id="FormularioNuevoAlumno">
@@ -9,8 +9,33 @@
 		{{ form_nuevo_archivo }}
 
 		<input type="submit" value="GUARDAR DATOS"/>
-
 	</form>
+
+<div class="container" style="margin-top: 10px;">
+	<div class="panel panel-danger sombra">
+		<div class="panel-heading">
+	  		<h2>Archivos</h2>
+		</div>
+	<div class="panel-body ">
+		<div class="col-lg-4 col-lg-offset-4">
+			<table class="table tabla-resultado">
+				<tr class="danger">
+					<th><h4>Lugar </h4></th>
+					<th><h4>Archivo N°</h4></th>
+				</tr>
+				{% for archivo in archivos %}
+				<tr>
+					<th><p>{{ archivo.lugar }}</p></th>
+					<th><p>{{ archivo.numero }}</p></th>
+				<!--<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Editar</a></th>
+					<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Borrar</a></th>-->
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+</div>
 
 </div>
 {% endblock %}
