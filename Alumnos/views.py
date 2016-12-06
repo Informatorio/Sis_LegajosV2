@@ -99,17 +99,16 @@ def alumno(request, id):
 
 def nuevo_alumno(request):
 	if request.method == 'POST':
-		form = Nuevo_alumno(request.POST)
-		if form.is_valid():
-			alumno = form.save(commit=False)
+		form_nuevo_alumno = Nuevo_alumno(request.POST)
+		if form_nuevo_alumno.is_valid():
+			alumno = form_nuevo_alumno.save(commit=False)
 			alumno.save()
 			return render(request, 'base.html',{'alumno': alumno})
 		else:
-			return render(request, 'nuevo_alumno.html',{'form': form})
+			return render(request, 'nuevo_alumno.html',{'form': form_nuevo_alumno})
 	else:
-		form = Nuevo_alumno()
-		return render(request, 'nuevo_alumno.html',{'form': form})
-
+		form_nuevo_alumno = Nuevo_alumno()
+		return render(request, 'nuevo_alumno.html',{'form': form_nuevo_alumno})
 
 def nuevo_lugar(request):
 	if request.method == 'POST':
@@ -117,9 +116,7 @@ def nuevo_lugar(request):
 		if form_nuevo_lugar.is_valid():
 			lugar = form_nuevo_lugar.save(commit=False)
 			lugar.save()
-			return render(request, 'base.html',{
-				'lugar': lugar
-				})
+			return render(request, 'nuevo_lugar.html',{ 'lugar': lugar, 'lugares': Lugar.objects.all()})
 		else:
 			return render(request, 'nuevo_lugar.html',{
 				'form_nuevo_lugar': form_nuevo_lugar
@@ -128,8 +125,7 @@ def nuevo_lugar(request):
 		form_nuevo_lugar = Nuevo_lugar()
 		return render(
 			request, 'nuevo_lugar.html',{
-			'form_nuevo_lugar': form_nuevo_lugar
-			})
+			'form_nuevo_lugar': form_nuevo_lugar, 'lugares': Lugar.objects.all()})
 
 
 def nuevo_archivo(request):
