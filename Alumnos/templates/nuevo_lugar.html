@@ -22,8 +22,8 @@
 		{% for lugar in lugares %}
 		<tr>
 			<th><p>{{ lugar.descripcion }}</p></th>
-		<!--	<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Editar</a></th>
-			<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Borrar</a></th>-->
+		<!--	<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Editar</a></th>-->
+			<th><a id="BotonVer" href="/lugar_borrar/{{ lugar.id }}"> Borrar</a></th>
 		</tr>
 		{% endfor %}
 	</table>

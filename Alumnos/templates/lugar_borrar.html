@@ -1,0 +1,12 @@
+{% block content %}
+<div class="container" id="FormularioNuevoAlumno">
+	<p>¿ Borrar Lugar : {{lugar.id}} ?</p>
+	<form action="/lugar_borrar/{{ lugar.id }}/" method="POST">
+			{% csrf_token %}
+			<input type="submit" value="Borrar"/>
+	
+			<a class="btn btn-default" href="/nuevo_lugar/">Cancelar</a>
+	</form>
+</div>
+
+{% endblock %}

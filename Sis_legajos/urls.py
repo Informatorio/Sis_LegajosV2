@@ -36,7 +36,6 @@ urlpatterns = [
     url(r'^busqueda_legajo/$', views.busqueda_legajo),
     url(r'^legajo/([0-9]+)/$', views.alumno),
     url(r'^nuevo_alumno/$', views.nuevo_alumno),
-    url(r'^nuevo_archivo/$', views.nuevo_archivo),
     #url(r'^almacenar/$', views.almacenar),
     url(r'^login/$',login,{'template_name':'login.html'}),
     url(r'^logout/$',logout,{'template_name':'logout.html'}),
@@ -44,7 +43,12 @@ urlpatterns = [
     url(r'^mover_legajo_archivo/([0-9]+)/$', views.mover_legajo_archivo),
     url(r'^mover_legajo_cajon/([0-9]+)/$', views.mover_legajo_cajon),
     url(r'^confirmar_mover/([0-9]+)/([0-9]+)/([0-9]+)/$', views.confirmar_mover, name="confirmar_mover"),
+    #URLS Lugar
     url(r'^nuevo_lugar/$', views.nuevo_lugar),
+    url(r'^lugar_borrar/([0-9]+)/$', views.borrar_lugar,name="borrar_lugar"),
+    #URLS Archivo
+    url(r'^nuevo_archivo/$', views.nuevo_archivo),
+    url(r'^archivo_borrar/([0-9]+)/$', views.borrar_archivo,name="borrar_archivo"),
     #URLS par almacenar un legajo
     url(r'^almacenar_legajo_lugar/([0-9]+)/$', views.almacenar_legajo_lugar,name="almacenar_legajo_lugar"),
     url(r'^almacenar_legajo_archivo/([0-9]+)/$', views.almacenar_legajo_archivo),

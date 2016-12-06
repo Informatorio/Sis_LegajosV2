@@ -110,6 +110,8 @@ def nuevo_alumno(request):
 		form_nuevo_alumno = Nuevo_alumno()
 		return render(request, 'nuevo_alumno.html',{'form': form_nuevo_alumno})
 
+#Lugar
+
 def nuevo_lugar(request):
 	if request.method == 'POST':
 		form_nuevo_lugar = Nuevo_lugar(request.POST)
@@ -119,7 +121,7 @@ def nuevo_lugar(request):
 			return render(request, 'nuevo_lugar.html',{ 'lugar': lugar, 'lugares': Lugar.objects.all()})
 		else:
 			return render(request, 'nuevo_lugar.html',{
-				'form_nuevo_lugar': form_nuevo_lugar
+				'form_nuevo_lugar': form_nuevo_lugar, 'lugares': Lugar.objects.all()
 				})
 	else:
 		form_nuevo_lugar = Nuevo_lugar()
@@ -127,6 +129,15 @@ def nuevo_lugar(request):
 			request, 'nuevo_lugar.html',{
 			'form_nuevo_lugar': form_nuevo_lugar, 'lugares': Lugar.objects.all()})
 
+def borrar_lugar(request, id_lugar):
+	lugar = Lugar.objects.get(pk=id_lugar)
+	if request.method == 'POST':
+		lugar.delete()
+		messages.add_message(request, messages.INFO," Lugar eliminado ")
+		return render(request,'nuevo_lugar.html',{'lugar': Lugar.objects.all()})
+	return render(request, 'lugar_borrar.html',{'lugar': lugar})
+
+#Archivo
 
 def nuevo_archivo(request):
 	if request.method == 'POST':
@@ -139,7 +150,7 @@ def nuevo_archivo(request):
 				})
 		else:
 			return render(request, 'nuevo_archivo.html',{
-				'form_nuevo_archivo': form_nuevo_archivo
+				'form_nuevo_archivo': form_nuevo_archivo,'archivos': Archivo.objects.all()
 				})
 	else:
 		form_nuevo_archivo = Nuevo_archivo()
@@ -147,6 +158,13 @@ def nuevo_archivo(request):
 			request, 'nuevo_archivo.html',{
 			'form_nuevo_archivo': form_nuevo_archivo, 'archivos': Archivo.objects.all()
 			})
+def borrar_archivo(request, id_archivo):
+	archivo = Archivo.objects.get(pk=id_archivo)
+	if request.method == 'POST':
+		archivo.delete()
+		messages.add_message(request, messages.INFO," Archivo eliminado ")
+		return render(request,'nuevo_archivo.html',{'archivos': Archivo.objects.all()})
+	return render(request, 'archivo_borrar.html',{'archivo': archivo}) 
 
 
 def mover_legajo_lugar(request, id):
