@@ -3,10 +3,41 @@
 {% block title %}Movimientos{% endblock %}
 
 {% block content %}
+
+<div class="container">
+	<div class="panel panel-danger sombra">
+	  <div class="panel-heading">
+	  	<h3>MOVIMIENTOS</h3>
+	  </div>
+	<table class="table tabla-resultado">
+		<tr class="danger">
+			<th><h4>Fecha</h4></th>
+			<th><h4>Alumno</h4></th>
+			<th><h4>Desde</h4></th>
+			<th><h4>Hasta</h4></th>
+		</tr>
+		{% for movimiento in movimientos %}
+		<tr>
+			<th>{{ movimiento.fecha }}</th>
+			<th>{{ movimiento.alumno }}</th>
+			<th>{{ movimiento.desde }}</th>
+			<th>{{ movimiento.hasta }}</th>
+		</tr>
+		{% endfor %}
+	</table>
+	</div>
+</div>
+
+<!--
+////////////////////////// BACK UP ///////////////////////////////////
+
 {% for movimiento in movimientos %}
 	<h2><a href="#">{{ movimiento.fecha }}</a></h2>
-	<!--<h2><a href="/movimientos/{{ movimiento.id }}">{{ cuenta.nombre }}</a></h2>-->
+	<!-<h2><a href="/movimientos/{{ movimiento.id }}">{{ cuenta.nombre }}</a></h2>->
 	<p>{{ movimiento.alumno }} {{ movimiento.desde }} <b>{{ movimiento.hasta }}</b></p>
 {% endfor %}
-<!--<p>El total de las cuentas es {{ total }}.</p>-->
+<!-<p>El total de las cuentas es {{ total }}.</p>->
+
+//////////////////////////////////////////////////////////////////////-->
+
 {% endblock %}
