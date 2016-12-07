@@ -70,6 +70,7 @@ body{
 	text-align: center;
 }
 
+
 .form-control{
 	text-align: center;
 	border: 2px solid #80000099;
@@ -99,6 +100,11 @@ body{
 
 .col-lg-3{
   text-align: center;
+}
+
+.col-lg-3 a{
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 .col-lg-12{
@@ -178,6 +184,8 @@ body{
   height: 60px;
 }
 
+/* FIN IDs */
+
 #CerrarSesion{
   background-color: #000;
   border-top: 0px;
@@ -205,6 +213,11 @@ body{
 
 .LETRAGRANDE {
   font-size: 3em;
+}
+
+.FLECHAGRANDE{
+  font-size: 4em;
+  padding: 15px 0px;
 }
 
 .MiniLabel{
