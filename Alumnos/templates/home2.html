@@ -1,18 +1,112 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- Accesos a buscar alumno -->
 
-<ul class="text-center LETRAGRANDE">
-	<li><a class="btn btn-danger btn-lg" href="/home"> Home </a></li>
-	<li><a class="btn btn-danger btn-lg" href="/busqueda_dni"> Busqueda por DNI </a></li>
-	<li><a class="btn btn-danger btn-lg" href="/busqueda_apellido"> Busqueda por APELLIDO </a></li>
-	<li><a class="btn btn-danger btn-lg" href="/busqueda_legajo"> Busqueda por LEGAJO </a></li>
-	<li><a class="btn btn-danger btn-lg" href="/nuevo_alumno"> Nuevo Alumno </a></li>
-	<li><a class="btn btn-danger btn-lg" href="/nuevo_archivo"> Nuevo Archivo </a></li>
-	<li><a class="btn btn-danger btn-lg" href="/nuevo_lugar"> Nuevo Lugar </a></li>
-	<li><a class="btn btn-danger btn-lg" href="/mover_legajo_lugar/292"> Mover Legajo </a></li>
-	<li><a class="btn btn-danger btn-lg" href="/movimientos"> Movimientos </a></li>
+<div=class="container col-lg-12">
+	<div class="col-lg-4 col-lg-offset-1">
+		<div class="well panel panel-danger sombra">
+		  <div class="panel-heading">
+		    <h2 class="panel-title"><span class="glyphicon glyphicon-search"></span>Buscar Alumno</h2>
+		  </div>
+
+		  <div class="panel-body">
+		  	<ul class="list-group LETRAGRANDE">
+		  		<div class="col-lg-12">
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;"href="/busqueda_dni"> Busqueda por DNI </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/busqueda_apellido"> Busqueda por APELLIDO </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/busqueda_legajo"> Busqueda por LEGAJO </a></li>
+				</div>
+		  	</ul>  	
+		  </div>
+		</div>
+	</div>
+	<!-- Acceso Mover legajo -->
+	<div class="col-lg-4 col-lg-offset-2">
+		<div class="well panel panel-danger sombra">
+		  <div class="panel-heading">
+		    <h2 class="panel-title"><span class="glyphicon glyphicon-folder-open"></span> Legajos</h2>
+		  </div>
+
+		  <div class="panel-body">
+		  	<ul class="list-group LETRAGRANDE">
+		  		<div class="col-lg-12" style="padding:30px;">
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;"href="/seleccionar_alumno"> Mover Legajo </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/movimientos"> Movimientos Realizados </a></li>
+				</div>
+		  	</ul>  	
+		  </div>
+		</div>
+	</div>
+</div>
+
+<div class="fantasma"></div>
+
+<!-- <div class="panel-body"> -->
+	<!-- Accesos a ABM alumnos -->
+<div=class="container col-lg-12">
+	<div class="col-lg-3" id="Home3Botones">
+		<div class="well panel panel-danger sombra">
+		  <div class="panel-heading">
+		    <h2 class="panel-title"><span class="glyphicon glyphicon-user"></span> Alumno</h2>
+		  </div>
+
+		  <div class="panel-body">
+		  	<ul class="list-group LETRAGRANDE">
+		  		<div class="col-lg-12">
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;"href="/nuevo_alumno"> Nuevo Alumno </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/busqueda_apellido"> Modificar Alumno </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/busqueda_apellido"> Borrar Alumno </a></li>
+				</div>
+		  	</ul>  	
+		  </div>
+		</div>
+	</div>
+	<!-- Acceso ABM Lugar -->
+	<div class="col-lg-3" id="Home3Botones">
+		<div class="well panel panel-danger sombra">
+		  <div class="panel-heading">
+		    <h2 class="panel-title"><span class="glyphicon glyphicon-map-marker
+	"></span> Lugares</h2>
+		  </div>
+
+		  <div class="panel-body">
+		  	<ul class="list-group LETRAGRANDE">
+		  		<div class="col-lg-12">
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/nuevo_lugar"> Nuevo Lugar </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/nuevo_lugar"> Modificar Lugar </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/nuevo_lugar"> Borrar Lugar </a></li>
+				</div>
+		  	</ul>  	
+		  </div>
+		</div>
+	</div>
+	<!-- Acceso ABM Archivos -->
+	<div class="col-lg-3" id="Home3Botones">
+		<div class="well panel panel-danger sombra">
+		  <div class="panel-heading">
+		    <h2 class="panel-title"><span class="glyphicon glyphicon-align-justify"></span> Archivos</h2>
+		  </div>
+
+		  <div class="panel-body">
+		  	<ul class="list-group LETRAGRANDE">
+		  		<div class="col-lg-12">
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/nuevo_archivo"> Nuevo Archivo </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/nuevo_archivo"> Modificar Archivo </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/nuevo_archvio"> Borrar Archivo </a></li>
+				</div>
+		  	</ul>  	
+		  </div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!-- <ul class="text-center LETRAGRANDE">
 	<li><a class="btn btn-danger btn-lg" href="#"> Courses </a></li>
-</ul>
+</ul> -->
 
 {% endblock %}
