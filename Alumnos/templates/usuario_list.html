@@ -1,0 +1,16 @@
+<h1>Usuarios!</h1>
+<p>
+    <a href="{% url "usuarios:nuevo" %}">Agregar Usuario</a>
+</p>
+<ul>
+    {% for usuario in object_list %}
+        <li>
+            <p>{{ usuario.name }}</p>
+            <p>
+                <a href="{% url "usuarios:detalle" usuario.id %}">Ver</a> | 
+                <a href="{% url "usuarios:editar" usuario.id %}">Editar</a> | 
+                <a href="{% url "usuarios:borrar" usuario.id %}">Borrar</a> 
+            </p>
+        </li>
+    {% endfor %}
+</ul>

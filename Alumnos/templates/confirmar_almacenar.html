@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %} Salida Intermedia {% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="panel panel-danger sombra">
+		<div class="panel-heading">	
+			<h4>Alumno: {{alumno.apellido}}, {{alumno.nombre}}</h4>
+		</div>
+		<div class="panel-body">
+		<!--	<h4>Lugar de origen: {{lugar_o}}</h4>
+			<h4>Archivo de origen: {{archivo_o}}</h4>
+			<h4>Cajon de origen: {{cajon_o}}</h4>
+			<br>-->
+			<h4>Lugar de destino: {{lugar_d}}</h4>
+			<h4>Archivo de destino: {{archivo_d}}</h4>
+			<h4>Cajon de destino: {{cajon_d}}</h4>
+			<br>
+			<div class="text-center LETRAGRANDE">
+				<a class="btn btn-danger btn-lg "href="../../almacenar_legajo_lugar/{{ alumno.id }}/"><i class="glyphicon glyphicon-remove-sign" aria-hidden="true"></i><br><b>CORREGIR DESTINO</b></a>
+
+				<a class="btn btn-success btn-lg" href="../../confirmar_almacenar/{{ alumno.id }}/{{cajon_d.id}}/"><i class="glyphicon glyphicon-ok-sign" aria-hidden="true"></i><br><b>CONFIRMAR ALMACENAMIENTO</b></a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
