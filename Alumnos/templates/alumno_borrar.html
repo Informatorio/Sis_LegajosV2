@@ -1,0 +1,12 @@
+{% block content %}
+<div class="container" id="FormularioNuevoAlumno">
+	<h3>¿ Borrar Alumno : {{alumno.apellido}}, {{alumno.nombre}} ?</h3>
+	<form action="/alumno_borrar/{{ alumno.id }}/" method="POST">
+			{% csrf_token %}
+			<input type="submit" value="Borrar"/>
+	
+			<a class="btn btn-default" href="/legajo/{{alumno.id}}">Cancelar</a>
+	</form>
+</div>
+
+{% endblock %}

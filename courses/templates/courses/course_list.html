@@ -5,7 +5,7 @@
 <ul>
     {% for course in object_list %}
         <li>
-            <p>{{ course.apellido }}, {{ course.nombre }}</p>
+            <p>{{ course.apellido }},{{ course.nombre }} </p>
             <p>
                 <a href="{% url "courses:detail" course.id %}">Ver</a> | 
                 <a href="{% url "courses:edit" course.id %}">Editar</a> | 
