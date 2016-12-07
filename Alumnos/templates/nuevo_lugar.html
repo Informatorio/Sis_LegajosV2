@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block title %} Nuevo Lugar {% endblock %}
 {% block content %}
 <div style="text-align:center;">
 <form action="/nuevo_lugar/" method="POST" style="text-align:center;">
@@ -22,8 +22,8 @@
 		{% for lugar in lugares %}
 		<tr>
 			<th><p>{{ lugar.descripcion }}</p></th>
-		<!--	<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Editar</a></th>
-			<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Borrar</a></th>-->
+		<!--	<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Editar</a></th>-->
+			<th><a id="BotonVer" href="/lugar_borrar/{{ lugar.id }}"> Borrar</a></th>
 		</tr>
 		{% endfor %}
 	</table>
