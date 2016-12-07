@@ -15,11 +15,11 @@ class CourseDetail(DetailView):
 class CourseCreation(CreateView):
 	model = Course
 	success_url = reverse_lazy('courses:list')
-	fields = ['nombre', 'apellido', 'nombre_usuario', 'password', 'rol']# corregir campos
+	fields = ['nombre', 'apellido', 'nombre_usuario', 'password', 'is_active', 'rol']# corregir campos
 class CourseUpdate(UpdateView):
 	model = Course
 	success_url = reverse_lazy('courses:list')
-	fields = ['nombre', 'apellido', 'nombre_usuario', 'password', 'rol'] # corregir campos
+	fields = ['nombre', 'apellido', 'nombre_usuario', 'password', 'is_active', 'rol'] # corregir campos
 class CourseDelete(DeleteView):
 	model = Course
 	success_url = reverse_lazy('courses:list')

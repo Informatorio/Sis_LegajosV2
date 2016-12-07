@@ -46,6 +46,9 @@ def home(request):
 def home2(request):
 	return render(request, 'home2.html')
 
+def seleccionar_alumno(request):
+	return render(request, 'seleccionar_alumno.html')
+
 def busqueda_apellido(request):
 	if request.method == 'POST':
 		form = Busqueda_legajo_apellido(request.POST)
@@ -79,7 +82,7 @@ def busqueda_legajo(request):
 		form = Busqueda_legajo_legajo()
 	return render(request, 'busqueda_legajo.html',{'form':form})
 
-	
+# Alumno	
 def alumno(request, id):
 	try:
 		alumno = Alumno.objects.get(pk=id)
@@ -99,16 +102,35 @@ def alumno(request, id):
 
 def nuevo_alumno(request):
 	if request.method == 'POST':
-		form_nuevo_alumno = Nuevo_alumno(request.POST)
-		if form_nuevo_alumno.is_valid():
-			alumno = form_nuevo_alumno.save(commit=False)
+		form = Nuevo_alumno(request.POST)
+		if form.is_valid():
+			alumno = form.save(commit=False)
 			alumno.save()
 			return render(request, 'base.html',{'alumno': alumno})
 		else:
-			return render(request, 'nuevo_alumno.html',{'form': form_nuevo_alumno})
+			return render(request, 'nuevo_alumno.html',{'form': form})
 	else:
-		form_nuevo_alumno = Nuevo_alumno()
-		return render(request, 'nuevo_alumno.html',{'form': form_nuevo_alumno})
+		form = Nuevo_alumno()
+		return render(request, 'nuevo_alumno.html',{'form': form})
+
+def editar_alumno(request, id_alumno):
+	alumno = Alumno.objects.get(pk=id_alumno)
+	if request.method == 'GET':
+		form = Nuevo_alumno(instance=alumno)
+	else:
+		form = Nuevo_alumno(request.POST, instance=alumno)
+		if form.is_valid():
+			form.save()
+		return render(request,'alumno:vista_alumno')
+	return render(request, 'nuevo_alumno.html',{'form': form})
+
+def borrar_alumno(request, id_alumno):
+	alumno = Alumno.objects.get(pk=id_alumno)
+	if request.method == 'POST':
+		alumno.delete()
+		return render(request,'home2.html',{'alumno': Alumno.objects.all()})
+	messages.add_message(request, messages.INFO," Alumno eliminado ")
+	return render(request, 'alumno_borrar.html',{'alumno': alumno})
 
 #Lugar
 

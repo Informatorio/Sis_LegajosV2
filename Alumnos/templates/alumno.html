@@ -56,16 +56,22 @@
 </div>
 
 <div class="container col-lg-12" style="Margin-bottom: 30px">
-	<div class="col-lg-6">
-		<a class="btn btn-danger btn-lg LETRAGRANDE" href="/home"><span class="glyphicon glyphicon-home"></span>Volver al Inicio</a>
+	<div class="col-lg-3">
+		<a class="btn btn-danger btn-lg GRANDE" href="/home"><span class="glyphicon glyphicon-home"></span>Volver al Inicio</a>
+	</div>
+	<div class="col-lg-3">
+		<a class="btn btn-danger btn-lg GRANDE" href="/editar_alumno/{{alumno.id}}"><span class="glyphicon glyphicon-home"></span>Editar Alumno</a>
+	</div>
+	<div class="col-lg-3">
+		<a class="btn btn-danger btn-lg GRANDE" href="/borrar_alumno/{{alumno.id}}"><span class="glyphicon glyphicon-home"></span>Borrar Alumno</a>
 	</div>
 	{% if cajon != 0 %}
-	<div class="col-lg-6">	
-		<a class="btn btn-danger btn-lg LETRAGRANDE" href="/mover_legajo_lugar/{{ alumno.id }}"><span class="glyphicon glyphicon-retweet"></span>Mover Legajo</a>
+	<div class="col-lg-3">	
+		<a class="btn btn-danger btn-lg GRANDE" href="/mover_legajo_lugar/{{ alumno.id }}"><span class="glyphicon glyphicon-retweet"></span>Mover Legajo</a>
 	</div>
 	{% else %}
-	<div class="col-lg-6">	
-		<a class="btn btn-danger btn-lg LETRAGRANDE" href="/almacenar_legajo_lugar/{{alumno.id}}"><span class="glyphicon glyphicon-retweet"></span>Almacenar Legajo</a>
+	<div class="col-lg-3">	
+		<a class="btn btn-danger btn-lg GRANDE" href="/almacenar_legajo_lugar/{{alumno.id}}"><span class="glyphicon glyphicon-retweet"></span>Almacenar Legajo</a>
 	</div>
 
 	{% endif %}

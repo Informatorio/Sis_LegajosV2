@@ -3,6 +3,10 @@ body{
   /*background-color: #000000;*/
 }
 
+.fantasma{
+  clear: both;
+} 
+
 #navbar {
 	background-color: red;
 }

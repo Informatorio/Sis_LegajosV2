@@ -7,7 +7,7 @@
 	{% csrf_token %}
 	{{ form_nuevo_lugar }}
 
-	<input type="submit" value="Guardar lugar">
+	<input type="submit" value="Guardar lugar" class="btn btn-danger">
 
 </form>
 
@@ -22,7 +22,7 @@
 		{% for lugar in lugares %}
 		<tr>
 			<th><p>{{ lugar.descripcion }}</p></th>
-		<!--	<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Editar</a></th>-->
+			<th><a id="BotonVer" href="#"> Editar</a></th>
 			<th><a id="BotonVer" href="/lugar_borrar/{{ lugar.id }}"> Borrar</a></th>
 		</tr>
 		{% endfor %}
