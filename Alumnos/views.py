@@ -102,14 +102,15 @@ def alumno(request, id):
 
 def nuevo_alumno(request):
 	if request.method == 'POST':
-		form = Nuevo_alumno(request.POST)
-		if form.is_valid():
-			alumno = form.save(commit=False)
+		form_nuevo_alumno = Nuevo_alumno(request.POST)
+		if form_nuevo_alumno.is_valid():
+			alumno = form_nuevo_alumno.save(commit=False)
 			alumno.save()
 			return render(request, 'base.html',{'alumno': alumno})
 		else:
-			return render(request, 'nuevo_alumno.html',{'form': form})
+			return render(request, 'nuevo_alumno.html',{'form': form_nuevo_alumno})
 	else:
+<<<<<<< HEAD
 		form = Nuevo_alumno()
 		return render(request, 'nuevo_alumno.html',{'form': form})
 
@@ -131,6 +132,10 @@ def borrar_alumno(request, id_alumno):
 		return render(request,'home2.html',{'alumno': Alumno.objects.all()})
 	messages.add_message(request, messages.INFO," Alumno eliminado ")
 	return render(request, 'alumno_borrar.html',{'alumno': alumno})
+=======
+		form_nuevo_alumno = Nuevo_alumno()
+		return render(request, 'nuevo_alumno.html',{'form': form_nuevo_alumno})
+>>>>>>> origin/Franco
 
 #Lugar
 

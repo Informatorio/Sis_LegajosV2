@@ -36,8 +36,10 @@ urlpatterns = [
     url(r'^busqueda_legajo/$', views.busqueda_legajo),
     url(r'^legajo/([0-9]+)/$', views.alumno, name='vista_alumno'),
     url(r'^nuevo_alumno/$', views.nuevo_alumno),
+    """     COMENTADO POR MERGE. Franco no tiene esto
     url(r'^editar_alumno/([0-9]+)$', views.editar_alumno),
     url(r'^borrar_alumno/([0-9]+)/$', views.borrar_alumno,name="borrar_alumno"),
+    """
     #url(r'^almacenar/$', views.almacenar),
     url(r'^login/$',login,{'template_name':'login.html'}),
     url(r'^logout/$',logout,{'template_name':'logout.html'}),

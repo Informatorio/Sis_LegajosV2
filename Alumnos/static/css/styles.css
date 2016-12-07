@@ -11,6 +11,13 @@ body{
 	background-color: red;
 }
 
+#Home3Botones{
+  margin-left: 4.16666666%;
+  margin-right: 4.16666666%;
+/*  margin-left: 2.08333333%;
+  margin-right: 2.08333333%;*/
+}
+
 #Bienvenida{
   box-shadow: 0 0 10px #A10000;
   border-radius: 50px;

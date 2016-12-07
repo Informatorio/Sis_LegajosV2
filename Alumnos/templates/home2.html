@@ -2,45 +2,49 @@
 
 {% block content %}
 <!-- Accesos a buscar alumno -->
-<div class="col-lg-4 col-lg-offset-1">
-	<div class="well panel panel-danger sombra">
-	  <div class="panel-heading">
-	    <h2 class="panel-title"><span class="glyphicon glyphicon-search"></span>Buscar Alumno</h2>
-	  </div>
+<div=class="container col-lg-12">
+	<div class="col-lg-4 col-lg-offset-1">
+		<div class="well panel panel-danger sombra">
+		  <div class="panel-heading">
+		    <h2 class="panel-title"><span class="glyphicon glyphicon-search"></span>Buscar Alumno</h2>
+		  </div>
 
-	  <div class="panel-body">
-	  	<ul class="list-group LETRAGRANDE">
-	  		<div class="col-lg-12">
-				<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;"href="/busqueda_dni"> Busqueda por DNI </a></li>
-				<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/busqueda_apellido"> Busqueda por APELLIDO </a></li>
-				<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/busqueda_legajo"> Busqueda por LEGAJO </a></li>
-			</div>
-	  	</ul>  	
-	  </div>
+		  <div class="panel-body">
+		  	<ul class="list-group LETRAGRANDE">
+		  		<div class="col-lg-12">
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;"href="/busqueda_dni"> Busqueda por DNI </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/busqueda_apellido"> Busqueda por APELLIDO </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/busqueda_legajo"> Busqueda por LEGAJO </a></li>
+				</div>
+		  	</ul>  	
+		  </div>
+		</div>
+	</div>
+	<!-- Acceso Mover legajo -->
+	<div class="col-lg-4 col-lg-offset-2">
+		<div class="well panel panel-danger sombra">
+		  <div class="panel-heading">
+		    <h2 class="panel-title"><span class="glyphicon glyphicon-folder-open"></span> Legajos</h2>
+		  </div>
+
+		  <div class="panel-body">
+		  	<ul class="list-group LETRAGRANDE">
+		  		<div class="col-lg-12" style="padding:30px;">
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;"href="/seleccionar_alumno"> Mover Legajo </a></li>
+					<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/movimientos"> Movimientos Realizados </a></li>
+				</div>
+		  	</ul>  	
+		  </div>
+		</div>
 	</div>
 </div>
-<!-- Acceso Mover legajo -->
-<div class="col-lg-4 col-lg-offset-2">
-	<div class="well panel panel-danger sombra">
-	  <div class="panel-heading">
-	    <h2 class="panel-title"><span class="glyphicon glyphicon-folder-open"></span> Legajos</h2>
-	  </div>
 
-	  <div class="panel-body">
-	  	<ul class="list-group LETRAGRANDE">
-	  		<div class="col-lg-12" style="padding:30px;">
-				<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;"href="/seleccionar_alumno"> Mover Legajo </a></li>
-				<li><a class="btn btn-danger btn-lg" style="Margin-bottom:15px;" href="/movimientos"> Movimientos Realizados </a></li>
-			</div>
-	  	</ul>  	
-	  </div>
-	</div>
-</div>
 <div class="fantasma"></div>
 
-<div class="panel-body">
+<!-- <div class="panel-body"> -->
 	<!-- Accesos a ABM alumnos -->
-	<div class="col-lg-4 ">
+<div=class="container col-lg-12">
+	<div class="col-lg-3" id="Home3Botones">
 		<div class="well panel panel-danger sombra">
 		  <div class="panel-heading">
 		    <h2 class="panel-title"><span class="glyphicon glyphicon-user"></span> Alumno</h2>
@@ -58,7 +62,7 @@
 		</div>
 	</div>
 	<!-- Acceso ABM Lugar -->
-	<div class="col-lg-4 ">
+	<div class="col-lg-3" id="Home3Botones">
 		<div class="well panel panel-danger sombra">
 		  <div class="panel-heading">
 		    <h2 class="panel-title"><span class="glyphicon glyphicon-map-marker
@@ -77,7 +81,7 @@
 		</div>
 	</div>
 	<!-- Acceso ABM Archivos -->
-	<div class="col-lg-4 ">
+	<div class="col-lg-3" id="Home3Botones">
 		<div class="well panel panel-danger sombra">
 		  <div class="panel-heading">
 		    <h2 class="panel-title"><span class="glyphicon glyphicon-align-justify"></span> Archivos</h2>

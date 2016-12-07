@@ -6,9 +6,9 @@
 	<form action="/nuevo_archivo/" method="POST">
 		
 		{% csrf_token %}
-		{{ form_nuevo_archivo }}
+		{{ form_nuevo_archivo.as_p }}
 
-		<input type="submit" value="GUARDAR DATOS" class="btn btn-danger"/>
+		<input class="btn btn-danger btn-lg" type="submit" value="GUARDAR DATOS"/>
 	</form>
 
 <div class="container" style="margin-top: 10px;">
@@ -17,12 +17,15 @@
 	  		<h2>Archivos</h2>
 		</div>
 	<div class="panel-body ">
-		<div class="col-lg-6 col-lg-offset-3">
+		<div class="col-lg-4 col-lg-offset-4">
 			<table class="table tabla-resultado">
 				<tr class="danger">
 					<th><h4>Lugar </h4></th>
 					<th><h4>Archivo N°</h4></th>
+        <!-- Comentado por merge. Franco no tiene esto.
 					<th><h4>Opciones</h4></th>
+        -->
+					<th><h4></h4></th>
 				</tr>
 				{% for archivo in archivos %}
 				<tr>

@@ -6,9 +6,7 @@
 	<!-- Etiqueta que sirve para identificar el formulario y mitigar ataques-->
 	{% csrf_token %}
 	{{ form_nuevo_lugar }}
-
-	<input type="submit" value="Guardar lugar" class="btn btn-danger">
-
+	<input class="btn btn-danger btn-lg" type="submit" value="Guardar lugar">
 </form>
 
 <div class="container" style="margin-top: 10px;">
@@ -22,7 +20,10 @@
 		{% for lugar in lugares %}
 		<tr>
 			<th><p>{{ lugar.descripcion }}</p></th>
+    <!-- Comentado por merge. Leo lo tiene así
 			<th><a id="BotonVer" href="#"> Editar</a></th>
+    -->
+		<!--	<th><a id="BotonVer" href="/legajo/{{ alumno.id }}"> Editar</a></th>-->
 			<th><a id="BotonVer" href="/lugar_borrar/{{ lugar.id }}"> Borrar</a></th>
 		</tr>
 		{% endfor %}

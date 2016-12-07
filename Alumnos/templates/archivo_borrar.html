@@ -3,12 +3,12 @@
 
 {% block content %}
 <div class="container" id="FormularioNuevoAlumno">
-	<p>¿ Borrar Archvio : {{archvio.numero}} ?</p>
+	<p>¿ Borrar Archivo: {{archivo.numero}} ?</p>
 	<form action="/archivo_borrar/{{ archivo.id }}/" method="POST">
 			{% csrf_token %}
-			<input type="submit" value="Borrar"/>
+			<input class="btn btn-danger btn-lg" type="submit" value="Borrar"/>
 	
-			<a class="btn btn-default" href="/nuevo_archivo/">Cancelar</a>
+			<a class="btn btn-danger btn-lg" href="/nuevo_archivo/">Cancelar</a>
 	</form>
 </div>
 
